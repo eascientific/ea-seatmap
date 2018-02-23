@@ -1,5 +1,5 @@
 {
-  "name": "ual-seatmap",
+  "name": "ea-seatmap",
   "version": "0.0.7",
   "description": "Data driven Seatmap",
   "keywords": [
@@ -7,7 +7,7 @@
     "d3"
   ],
   "license": "MIT",
-  "main": "build/ual-seatmap.min.js",
+  "main": "build/ea-seatmap.min.js",
   "jsnext:main": "index",
   "homepage": "https://",
   "repository": {
@@ -22,8 +22,8 @@
     "test:watch": "gaze \"npm test\" test/**/*-test.js build/**/*.js",
     "build": "rollup -c",
     "build:watch": "npm run build -- -w",
-    "bundle": "rollup -c && uglifyjs build/ual-seatmap.js -c -m -o build/ual-seatmap.min.js",
-    "dist": "rollup -c && uglifyjs build/ual-seatmap.js -c -m -o dist/ual-seatmap.min.js",
+    "bundle": "rollup -c && uglifyjs build/ea-seatmap.js -c -m -o build/ea-seatmap.min.js",
+    "dist": "rollup -c && uglifyjs build/ea-seatmap.js -c -m -o dist/ea-seatmap.min.js",
     "prepublish": "npm run bundle",
     "postpublish": "git push && git push --tags",
     "serve": "browser-sync start -s -f *.html build/*.js --reload-delay 1000",

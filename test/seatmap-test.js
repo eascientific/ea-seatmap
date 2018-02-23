@@ -1,6 +1,6 @@
 const tape = require('tape')
 const moment = require('moment')
-const ea = require('../build/ual-seatmap.js')
+const ea = require('../build/ea-seatmap.js')
 const html = `<!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,8 +8,8 @@ const html = `<!DOCTYPE html>
     <title>test</title>
   </head>
   <body>
-    <div id="ual-seatmap"></div>
-    <div id="ual-seatmap-1"></div>
+    <div id="ea-seatmap"></div>
+    <div id="ea-seatmap-1"></div>
   </body>
 </html>`
 require('jsdom-global')(html)
@@ -37,7 +37,7 @@ tape('Should throw if DOM element not found', (test) => {
 tape('Should not throw if DOM element is found', (test) => {
   test.plan(1)
   test.doesNotThrow(() => {
-    ea.timeline({elementSelector: '#ual-seatmap'})
+    ea.timeline({elementSelector: '#ea-seatmap'})
   }, Error)
   test.end()
 })
@@ -46,7 +46,7 @@ tape('Should not display top axis', (test) => {
   test.plan(1)
   test.doesNotThrow(() => {
     let t = ea.timeline({
-      elementSelector: '#ual-seatmap-1',
+      elementSelector: '#ea-seatmap-1',
       data: data,
       showAxis: { top: false, right: true, bottom: true, left: true }
     })
@@ -59,7 +59,7 @@ tape('Should not display right axis', (test) => {
   test.plan(1)
   test.doesNotThrow(() => {
     let t = ea.timeline({
-      elementSelector: '#ual-seatmap-1',
+      elementSelector: '#ea-seatmap-1',
       data: data,
       showAxis: { top: true, right: false, bottom: true, left: true }
     })
@@ -72,7 +72,7 @@ tape('Should not display bottom axis', (test) => {
   test.plan(1)
   test.doesNotThrow(() => {
     let t = ea.timeline({
-      elementSelector: '#ual-seatmap-1',
+      elementSelector: '#ea-seatmap-1',
       data: data,
       showAxis: { top: true, right: true, bottom: false, left: true }
     })
@@ -85,7 +85,7 @@ tape('Should not display left axis', (test) => {
   test.plan(1)
   test.doesNotThrow(() => {
     let t = ea.timeline({
-      elementSelector: '#ual-seatmap-1',
+      elementSelector: '#ea-seatmap-1',
       data: data,
       showAxis: { top: true, right: true, bottom: true, left: false }
     })

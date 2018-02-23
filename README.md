@@ -1,4 +1,4 @@
-# ual-seatmap-timeline
+# ea-seatmap
 
 Data driven Seatmap
 
@@ -10,7 +10,7 @@ Data driven Seatmap
 
 In your website
 ```shell
-npm install ual-seatmap
+npm install ea-seatmap
 ```
 
 For development

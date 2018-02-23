@@ -1,7 +1,7 @@
 import * as d3 from 'd3'
 
 export default function seatmap({
-  element = '#ual-seatmap',
+  element = '#ea-seatmap',
   data = [],
   margin = {
     top: 18,

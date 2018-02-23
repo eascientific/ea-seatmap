@@ -28,10 +28,10 @@
     }
 
   </style>
-  <div id="ual-seatmap" class="seatmap"></div>
+  <div id="ea-seatmap" class="seatmap"></div>
   <div id="seatmap" class="seatmap-lg"></div>
 
-  <script src="./build/ual-seatmap.js"></script>
+  <script src="./build/ea-seatmap.js"></script>
   <script>
     window.onload = function runSeatmapcode() {
       const seatmapData1 = [{
@@ -124,11 +124,11 @@
           status: 'vacant'
         }]
       }]
-      var seatmap = ual.seatmap({
+      var seatmap = ea.seatmap({
         data: seatmapData1
       })
       var elem1 = document.getElementById('seatmap')
-      var seatmap1 = ual.seatmap({
+      var seatmap1 = ea.seatmap({
         element: elem1,
         data: seatmapData1
       })
@@ -140,11 +140,11 @@
         const cell = row.cells[getRandomInt(0, row.cells.length)]
         cell.status = (cell.status === 'reserved') ? 'vacant' : 'reserved';
         seatmap.update(seatmapData1)
-        // seatmap = ual.seatmap({
+        // seatmap = ea.seatmap({
         //   data: seatmapData1
         // })
 
-        // seatmap1 = ual.seatmap({
+        // seatmap1 = ea.seatmap({
         //   element: elem1,
         //   data: seatmapData1
         // })

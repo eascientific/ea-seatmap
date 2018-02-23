@@ -4,7 +4,7 @@ import babel from 'rollup-plugin-babel'
 export default {
   entry: 'index.js',
   format: 'umd',
-  moduleName: 'ual',
+  moduleName: 'ea',
   globals: {},
   plugins: [
     npm({
@@ -14,6 +14,6 @@ export default {
       exclude: 'node_modules/**'
     })
   ],
-  dest: './build/ual-seatmap.js',
+  dest: './build/ea-seatmap.js',
   sourceMap: true
 }

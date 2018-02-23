@@ -1,4 +1,4 @@
 export {
   default as seatmap
 }
-from './src/ual-seatmap'
+from './src/ea-seatmap'
