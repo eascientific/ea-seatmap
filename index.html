@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+</head>
+
+<body>
+  <style>
+    .seatmap {
+      width: 400px;
+    }
+
+    .seatmap-lg {
+      width: 100%;
+    }
+
+    .reserved {
+      fill: red;
+    }
+
+    .vacant {
+      fill: blue;
+    }
+
+  </style>
+  <div id="ual-seatmap" class="seatmap"></div>
+  <div id="seatmap" class="seatmap-lg"></div>
+
+  <script src="./build/ual-seatmap.js"></script>
+  <script>
+    window.onload = function runSeatmapcode() {
+      const seatmapData1 = [{
+        cells: [{
+          type: 'seat',
+          status: 'vacant'
+        }, {
+          type: 'seat',
+          status: 'vacant'
+        }, {
+          type: 'seat',
+          status: 'vacant'
+        }]
+      }, {
+        cells: [{
+          type: 'seat',
+          status: 'vacant'
+        }, {
+          type: 'seat',
+          status: 'vacant'
+        }, {
+          type: 'seat',
+          status: 'vacant'
+        }]
+      }, {
+        cells: [{
+          type: 'seat',
+          status: 'reserved'
+        }, {
+          type: 'seat',
+          status: 'vacant'
+        }, {
+          type: 'seat',
+          status: 'vacant'
+        }]
+      }, {
+        cells: [{
+          type: 'seat',
+          status: 'reserved'
+        }, {
+          type: 'seat',
+          status: 'vacant'
+        }, {
+          type: 'seat',
+          status: 'vacant'
+        }]
+      }, {
+        cells: [{
+          type: 'seat',
+          status: 'reserved'
+        }, {
+          type: 'seat',
+          status: 'vacant'
+        }, {
+          type: 'seat',
+          status: 'vacant'
+        }]
+      }, {
+        cells: [{
+          type: 'seat',
+          status: 'reserved'
+        }, {
+          type: 'seat',
+          status: 'vacant'
+        }, {
+          type: 'seat',
+          status: 'vacant'
+        }]
+      }, {
+        cells: [{
+          type: 'seat',
+          status: 'reserved'
+        }, {
+          type: 'seat',
+          status: 'vacant'
+        }, {
+          type: 'seat',
+          status: 'vacant'
+        }]
+      }
+      , {
+        cells: [{
+          type: 'seat',
+          status: 'reserved'
+        }, {
+          type: 'seat',
+          status: 'vacant'
+        }, {
+          type: 'seat',
+          status: 'vacant'
+        }]
+      }]
+      var seatmap = ual.seatmap({
+        data: seatmapData1
+      })
+      var elem1 = document.getElementById('seatmap')
+      var seatmap1 = ual.seatmap({
+        element: elem1,
+        data: seatmapData1
+      })
+
+      nIntervId = setInterval(simulate, 1000)
+
+      function simulate() {
+        const row = seatmapData1[getRandomInt(0, seatmapData1.length)]
+        const cell = row.cells[getRandomInt(0, row.cells.length)]
+        cell.status = (cell.status === 'reserved') ? 'vacant' : 'reserved';
+        seatmap.update(seatmapData1)
+        // seatmap = ual.seatmap({
+        //   data: seatmapData1
+        // })
+
+        // seatmap1 = ual.seatmap({
+        //   element: elem1,
+        //   data: seatmapData1
+        // })
+      }
+
+      function getRandomInt(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
+      }
+    };
+
+  </script>
+</body>
+
+</html>
